@@ -1,0 +1,1192 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@100;200;300;500;600;700&display=swap');
+
+$midninghtGreen: #014E56;
+$lightCoral: #F67E7E;
+$white: #ffffff;
+$raptureBlue: #79C8C7;
+$policeBlue: #2C6269;
+$dibJungleGreen: #004047;
+$sacramentoStateGreen: #012F34;
+$darkGreen: #002529;
+$livic: 'Livvic';
+
+%transition {
+    transition: all ease 0.5s;
+}
+
+body {
+    background-color: $midninghtGreen;
+    font-family: $livic;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.header {
+    position: relative;
+    padding-top: 20px;
+    &_left {
+        display: flex;
+        align-items: center;
+        &_link {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 15px 15px;
+            display: inline-block;
+            @extend %transition;
+            &:hover {
+                color: $lightCoral;
+            }
+        }
+    }
+    &_mobile_icon_btn {
+        display: none;
+    }
+}
+
+.hero_left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 25px;
+    &_imges {
+        display: none;
+    }
+}
+
+.button {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+    padding: 10px 30px;
+    border: 2px solid #FFFFFF;
+    border-radius: 24px;
+    text-decoration: none;
+    @extend %transition;
+    &_primary {
+        &:hover {
+            background-color: $white;
+            color: $darkGreen;
+        }
+    }
+}
+
+.header_mob_icon_btn {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    .header {
+        &_left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        &_logo {
+            display: none;
+        }
+        z-index: 10000;
+    }
+
+    .hero_left {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin-left: 0;
+        top: 0px;
+        left: 105%;
+        background-color: $policeBlue;
+        border-radius: 10px;
+        height: 100vh;
+        width: 80%;
+        animation: openOf 0.5s forwards ease-in;
+        &-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+            padding-top: 30%;
+            padding-bottom: 20px;
+        }
+        &_imges {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    } 
+
+    .open {
+        animation: openOn 0.5s forwards ease-in;
+    }
+
+    @keyframes openOn {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    @keyframes openOf {
+        0% {
+            transform: translateX(-100%)
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    .header_mob_icon_btn {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        &_imges {
+            position: absolute;
+        }
+        &_img {
+            z-index: -1;
+        }
+    }
+
+    .bars {
+        margin-left: 170px;
+        padding: 15px 10px;
+        font-size: 25px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+    }
+
+}
+
+/* Hero section */
+.hero_section_text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    &_img {
+        position: absolute;
+        top: 135px;
+        left: 0;
+    }
+}
+
+.hero_text_h1 {
+    font-family: 'Livvic';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90px;
+    color: #FFFFFF;
+    padding-left: 20px;
+    &_span {
+        color: $lightCoral;
+    }
+}
+
+.hero_text_bp {
+
+    &_b hr {
+        color: $raptureBlue;
+        width: 40px;
+        height: 3px;
+    }
+
+    &_p {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        color: #FFFFFF;
+        padding-top: 50px;
+    }
+
+    &_img {
+        position: absolute;
+        bottom: 0;
+        right: 180px;
+    }
+}
+
+.abou {
+    & hr {
+        color: #e53840;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .hero_section_text {
+        position: relative;
+        &_img {
+            display: none;
+        }
+    }
+    
+    .hero_text_h1 {
+        font-size: 40px;
+    }
+    
+    .hero_text_bp {
+    
+        &_b hr {
+            display: none;
+            color: $raptureBlue;
+            width: 40px;
+            height: 3px;
+        }
+    
+        &_p {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            padding-bottom: 100px;
+        }
+    
+        &_img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+}
+
+/* Hero section Build */
+.hero_section_build {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $sacramentoStateGreen;
+    height: 500px;
+    &_img {
+        position: absolute;
+        bottom: 0; 
+        right: 0;
+    }
+}
+
+.hero_box {
+    position: relative;
+    &_b hr {
+        position: absolute;
+        top: -50px;
+        left: 15px;
+        color: $lightCoral;
+        width: 40px;
+        height: 3px;
+    }
+
+    &_p {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        color: $white;
+    }
+}
+
+.hero_exsperiend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &_text {
+        padding-left: 15px;
+        h5 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            color: $lightCoral;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 25px;
+            color: $white;
+            mix-blend-mode: normal;
+            opacity: 0.8;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .hero_section_build {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $sacramentoStateGreen;
+        height: auto;
+        width: 100%;
+        padding: 15px 5px;
+        padding-top: 50px;
+        &_img {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    
+    .hero_box {
+        position: relative;
+        &_b hr {
+            position: absolute;
+            top: -50px;
+            left: 15px;
+            color: $lightCoral;
+            width: 40px;
+            height: 3px;
+        }
+    
+        &_p {
+            display: flex;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 28px;
+            color: $white;
+        }
+    }
+    
+    
+    .hero_exsperiend {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 15px 5px;
+        &_text {
+            padding-left: 0;
+            h5 {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 28px;
+                color: $lightCoral;
+            }
+    
+            p {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 25px;
+                color: $white;
+                mix-blend-mode: normal;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+/* Hero section Delivering */
+.hero_section_delivering {
+    position: relative;
+    background-color: $dibJungleGreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 600px;
+    &_imgone {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &_imgtwoo {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    & h1 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        color: $white;
+        padding-top: 120px;
+    }
+    & span {
+        color: $raptureBlue;
+    }
+}
+
+.deliver_user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    &_img {
+        position: absolute;
+        top: 45px;
+    }
+    & p {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 25px;
+        color: $white;
+        z-index: 9;
+    }
+    & h4 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        color: $raptureBlue;
+    }
+    & h6 {
+        font-size: 13px;
+        line-height: 18px;
+        color: $white;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero_section_delivering {
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding: 0 5px;
+        &_imgone {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &_imgtwoo {
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+        }
+        & h1 {
+            font-size: 28px;
+            line-height: 28px;
+        }
+    }
+    
+    .deliver_user {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding-top: 80px;
+        &_img {
+            position: absolute;
+            top: 45px;
+        }
+        & p {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 25px;
+            color: $white;
+            z-index: 9;
+        }
+        & h4 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            color: $raptureBlue;
+        }
+        & h6 {
+            font-size: 13px;
+            line-height: 18px;
+            color: $white;
+        }
+    }
+}
+
+/* Get Started */
+.get_started {
+    position: relative;
+    background-color: $lightCoral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    &_img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+.started_contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    & h2 {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        color: $sacramentoStateGreen;
+    }
+}
+.buttons {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #012F34;
+    padding: 10px 30px;
+    border: 2px solid #012F34;
+    border-radius: 24px;
+    text-decoration: none;
+    @extend %transition;
+    &_started {
+        &:hover {
+            background-color: $sacramentoStateGreen;
+                color: $white;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .get_started {
+        position: relative;
+        background-color: $lightCoral;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+        padding: 15px;
+        &_img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100px;
+            width: auto;
+        }
+    }
+    .started_contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        & h2 {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 28px;
+            color: $sacramentoStateGreen;
+        }
+    }
+    .buttons {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 28px;
+        color: #012F34;
+        padding: 10px 30px;
+        border: 2px solid #012F34;
+        border-radius: 24px;
+        text-decoration: none;
+        @extend %transition;
+    }
+}
+
+/* Footer */
+.footers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 196px;
+    background-color: #002529;
+}
+.headers {
+    display: flex; 
+    justify-content: space-between;
+    &_logo {
+        margin: 0 20px;
+        &_img {
+            margin-right: 20px;
+        }
+    }
+    &_left {
+        flex-basis: 30%;
+        &_link {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 20px 15px;
+            display: inline-block;
+            @extend %transition;
+            &:hover {
+                color: $lightCoral;
+            }
+            &:active {
+                color: $midninghtGreen;
+            }
+        }
+    }
+    &_p {
+        flex-basis: 60%;
+        align-self: start;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 25px;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+        opacity: 0.6;
+    }
+}
+
+.link {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    &_icon {
+        & a {
+            text-decoration: none;
+        }
+        & img {
+            margin: 5px 10px;
+        }
+    }
+    & p {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 25px;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 767px) {
+    .footers {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        background-color: #002529;
+        padding: 15px 5px;
+    }
+    .headers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        &_logo {
+            margin: 0 20px;
+            &_img {
+                margin-right: 0;
+            }
+        }
+        &_left {
+            flex-basis: 100%;
+            &_link {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 28px;
+                color: #FFFFFF;
+                text-decoration: none;
+                padding: 20px 15px;
+                display: inline-block;
+                @extend %transition;
+                &:hover {
+                    color: $lightCoral;
+                }
+                &:active {
+                    color: $midninghtGreen;
+                }
+            }
+        }
+        &_p {
+            flex-basis: 100%;
+            align-self: center;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 25px;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.6;
+        }
+    }
+    
+    .link {
+        justify-content: space-between;
+        text-align: center;
+        &_icon {
+            align-items: center;
+            & a {
+                text-decoration: none;
+            }
+            & img {
+                margin: 5px 10px;
+            }
+        }
+        & p {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 25px;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.6;
+        }
+    }
+}
+
+/* ------ About ------*/
+.about_heroOne {
+    position: relative;
+    &_img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.about_section_meet {
+    position: relative;
+    background-color: $dibJungleGreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 1000px;
+    &_imgOne {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &_imgTwoo {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.meet_h2 {
+    & h2 {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        color: $white;
+    }
+}
+
+.meet_user {
+    position: relative;
+    background-color: $sacramentoStateGreen;
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    & h5 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        color: $raptureBlue;
+        padding-top: 15px;
+    }
+    
+    & h6 {
+        font-size: 15px;
+        line-height: 25px;
+        color: $white;
+    }
+
+    &_imag {
+        position: absolute;
+        bottom: -27px;
+    }
+
+    &_icon {
+        & a {
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .about_heroOne {
+        position: relative;
+        &_img {
+            position: absolute;
+            bottom: -100px;
+            right: 0;
+        }
+    }
+    
+    .about_section_meet {
+        position: relative;
+        background-color: $dibJungleGreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%; 
+        height: auto;
+        padding-top: 80px;
+        padding-bottom: 130px;
+        &_imgOne {
+            position: absolute;
+            top: -100px;
+            left: 0;
+        }
+        &_imgTwoo {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    
+    .meet_h2 {
+        & h2 {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 28px;
+            color: $white;
+        }
+    }
+    
+    .meet_user {
+        position: relative;
+        background-color: $sacramentoStateGreen;
+        width: 100%;
+        height: 255px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+        & h5 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            color: $raptureBlue;
+            padding-top: 15px;
+        }
+        
+        & h6 {
+            font-size: 15px;
+            line-height: 25px;
+            color: $white;
+        }
+    
+        &_imag {
+            position: absolute;
+            bottom: -27px;
+        }
+    
+        &_icon {
+            & a {
+                text-decoration: none;
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+/* About clients section */
+.about_section_clients {
+    position: relative;
+    background-color: $sacramentoStateGreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    &_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.clients_hed {
+    & h2 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        color: $white;
+    }
+}
+
+.clients_img {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+    .about_section_clients {
+        position: relative;
+        background-color: $sacramentoStateGreen;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding-top: 100px;
+        &_img {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            overflow: hidden;
+        }
+    }
+    
+    .clients_hed {
+        & h2 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 28px;
+            color: $white;
+        }
+    }
+    
+    .clients_img {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        height: 400px;
+        margin-top: 30px;
+    }
+}
+
+/*---------- Contact ---------*/
+.contact_section {
+    position: relative;
+    background-color: $midninghtGreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    &_one {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+    }
+    &_twoo {
+        position: absolute;
+        bottom: 0;
+        right: 0px;
+    }
+}
+
+.contact_hed {
+    & h2 {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 100px;
+        color: #FFFFFF;
+    }
+    & h4 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px;
+        color: #F67E7E;
+    }
+}
+
+.contact_user {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    & h5 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        color: #FFFFFF;
+        margin-left: 10px;
+    }
+}
+
+
+.form_inputs {
+    width: 100%;
+}
+
+.inputs {
+    width: 100%;
+    & input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 20px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+    }
+    &_textarea {
+        width: 100%;
+        border: none;
+        background-color: $midninghtGreen;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        outline: none;
+        background: transparent;
+    }
+}
+
+.input_btn {
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 24px;
+    padding: 5px 25px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #004047;
+    margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+    .contact_section {
+        position: relative;
+        background-color: $midninghtGreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 15px 5px;
+        &_one {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: -15px;
+        }
+        &_twoo {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: -15px;
+        }
+    }
+    
+    .contact_hed {
+        padding-bottom: 20px;
+        & h2 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 100px;
+            color: #FFFFFF;
+            margin-bottom: 0rem;
+        }
+        & h4 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 48px;
+            color: #F67E7E;
+        }
+    }
+    
+    .contact_user {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        & h5 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            margin-left: 10px;
+        }
+    }
+    
+    
+    .form_inputs {
+        width: 100%;
+    }
+    
+    .inputs {
+        width: 100%;
+        & input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+        &_textarea {
+            width: 100%;
+            border: none;
+            background-color: $midninghtGreen;
+            border-bottom: 1px solid #fff;
+            color: #fff;
+            outline: none;
+            background: transparent;
+        }
+    }
+    
+    .input_btn {
+        background: #FFFFFF;
+        border: 2px solid #FFFFFF;
+        border-radius: 24px;
+        padding: 5px 25px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        color: #004047;
+        margin-top: 15px;
+    }
+}
+
+
